@@ -20,6 +20,11 @@ Donation Bot for Byteball
 ## Installation
 'npm install'
 
+## Creator
+Yamaoka
+<https://twitter.com/Yamaoka_btc>
+<http://byteball.memo.wiki>
+
 ***
 
 # Byteballドネーション(寄付)チャットボット
@@ -43,4 +48,9 @@ Donation Bot for Byteball
 
 ## 環境設定
 'npm install'
+
+## 開発者
+Yamaoka
+<https://twitter.com/Yamaoka_btc>
+<http://byteball.memo.wiki>
 
