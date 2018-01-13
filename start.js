@@ -19,7 +19,7 @@ var KEYS_FILENAME = appDataDir + '/' + (conf.KEYS_FILENAME || 'keys.json');
 var wallet_id;
 var xPrivKey;
 
-//languag=e
+
 var lang = 'en';
 
 //*memberlist
@@ -548,11 +548,11 @@ function handleText(from_address, text, onUnknown){
                 whois = cmdlist[1];
 		command = 'donation';
         }
-    else if(cmdlist[0]=='selectamount'){
+    	else if(cmdlist[0]=='selectamount'){
                 whois = cmdlist[1];
 		command = 'selectamount';
         }//setamount
-    else if(cmdlist[0]=='setamount'){
+    	else if(cmdlist[0]=='setamount'){
                 amount = cmdlist[1];
                 command = 'donation';
         }
@@ -609,21 +609,21 @@ function handleText(from_address, text, onUnknown){
 				}
                         }
                         break;
-        case 'selectamount':
-        	reply = dictionary[9];
-        	reply += '\n';
-        	reply += '[[1K bytes]](command:setamount_1000) - [[10K bytes]](command:setamount_10000) - [[100KByte]](command:setamount_100000)';
-        	reply += '\n';
-        	reply += '[[1M bytes]](command:setamount_1000000) - [[10M bytes]](command:setamount_10000000) - [[100M bytes]](command:setamount_100000000)';
-        	reply += '\n';
-        	reply += '[[1G bytes]](command:setamount_1000000)';
-        	device.sendMessageToDevice(from_address, 'text', reply);
-        	break;
+        	case 'selectamount':
+        		reply = dictionary[9];
+        		reply += '\n';
+        		reply += '[[1K bytes]](command:setamount_1000) - [[10K bytes]](command:setamount_10000) - [[100 KByte]](command:setamount_100000)';
+        		reply += '\n';
+        		reply += '[[1M bytes]](command:setamount_1000000) - [[10M bytes]](command:setamount_10000000) - [[100M bytes]](command:setamount_100000000)';
+        		reply += '\n';
+        		reply += '[[1G bytes]](command:setamount_1000000)';
+        		device.sendMessageToDevice(from_address, 'text', reply);
+        		break;
 		case 'donation':
 			for(let i=0;i<member_jp.length;i++){
                                 if(member[i][0] == whois){
-                                		reply = dictionary[11];
-        								reply += '\n\n';
+                                	reply = dictionary[11];
+        				reply += '\n\n';
                                         reply += dictionary[8]  + member[i][0] + '\n';
                                         reply += dictionary[12]  + amount +'bytes\n';
                                         reply += ' (=' + amount / 1000000000+'Gbytes' + '=' + amount / 1000000 + 'Mbytes' + '=' + amount / 1000 + 'Kbytes)';
@@ -644,16 +644,6 @@ function handleText(from_address, text, onUnknown){
 	}
 }
 
-function showMainmenu(){
-	var device = require('byteballcore/device.js');
-	var reply = 'memberlist';
-        for(let i=0;i<member_jp.length;i++){
-               reply += '\n';
-               reply += '[[' + member[i][0] + ']](command:details_' + member[i][0] +'):';
-               reply += member[i][1];
-        }
-        device.sendMessageToDevice(from_address, 'text', reply);
-}
 
 function analyzePayParams(amountText, assetText, cb){
 	// expected:
