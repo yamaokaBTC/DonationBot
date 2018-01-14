@@ -48,7 +48,7 @@ var amount = 0;
 
 var dictionary;
 var dictionary_jp =[
-'このチャットボットは寄付を簡単に行うためのボットです。\n言語を選択してください\n [[英語]](command:language_en) - [[日本語]](command:language_jp)',
+'このチャットボットは寄付を簡単に行うためのボットです。\nこのメニューを再度表示するには「hi」か「help」か「ヘルプ」と入力してENTERを押してください。\n\n言語を選択してください\n [[英語]](command:language_en) - [[日本語]](command:language_jp)',
 '戻る',
 '寄付',
 'この人に寄付する：',
@@ -64,7 +64,7 @@ var dictionary_jp =[
 '止める'
 ];
 var dictionary_en =[
-'This chatbot makes it easy to donate to specific people.\nPlease select your language.\n [[English]](command:language_en) - [[Japanese]](command:language_jp)',
+'This chatbot makes it easy to donate to specific people.\nTo display this menu again, enter "hi", "help" or "Help" and press ENTER.\n\nPlease select your language.\n [[English]](command:language_en) - [[Japanese]](command:language_jp)',
 'Back',
 'Donation',
 'Click here to donate to：',
@@ -565,7 +565,16 @@ function handleText(from_address, text, onUnknown){
 	}
 
 	switch(command){
+		case 'hi':
+		case 'Hi':
+		case 'HI':
+		case 'help':
+		case 'Help':
+		case 'HELP':
+		case 'ヘルプ':
 		case 'menu_welcome':
+			whois = '';
+			amount = 0;
 			device.sendMessageToDevice(from_address, 'text', dictionary[0]);
                         break;
 		case 'menu_home':
