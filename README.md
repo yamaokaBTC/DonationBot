@@ -14,10 +14,10 @@ Donation Bot for Byteball
 ## How to use
 1.Connect to the bot with a pairing code.  
   PairingCode: AluGB23xT2wR9eZt6hwei+frNOTYg4ZTp5D+aYMmzYFk@byteball.org/bb#donate  
-1.Click your language and Read list  
-2.If there is a person who wishes to donate, press the donation link  
-3.Select amount  
-4.Check name and amount.Press link and SEND.  
+2.Click your language and Read list  
+3.If there is a person who wishes to donate, press the donation link  
+4.Select amount  
+5.Check name and amount.Press link and SEND.  
 
 ## Installation
 'npm install'  
